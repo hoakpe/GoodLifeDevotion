@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good LIfe Devotion - Spreading God's Word</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #6c4ab6;
+        --secondary: #8d72e1;
+        --accent: #b9e0ff;
+        --light: #f5f5f5;
+        --dark: #1a1a2e;
+        --text: #333333;
+        --glass: rgba(255, 255, 255, 0.2);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --glass-dark: rgba(0, 0, 0, 0.2);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--text);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/the\ cross.png") center/cover no-repeat;
+        z-index: -2;
+      }
+
+      /*.header-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .header-video.active {
+        opacity: 1;
+      }
+
+      .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+      }*/
+
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("images/the\ cross.png") center/cover no-repeat;
+        z-index: -2;
+        animation: zoomAnimation 20s ease infinite;
+        transform-origin: center;
+      }
+
+      @keyframes zoomAnimation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .header-content {
+        z-index: 1;
+        padding: 20px;
+        max-width: 800px;
+      }
+
+      .logo-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        position: relative;
+      }
+
+      .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .header-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .header-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1s ease forwards 0.3s;
+        opacity: 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--secondary);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease forwards 0.6s;
+        opacity: 0;
+      }
+
+      .btn:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-logo.scrolled {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 25px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links a i {
+        margin-right: 8px;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a.scrolled {
+        color: var(--dark);
+      }
+
+      .nav-links a:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: white;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a.scrolled:after {
+        background: var(--primary);
+      }
+
+      .nav-links a:hover:after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .mobile-menu-btn.scrolled {
+        color: var(--dark);
+      }
+
+      /* Main Content */
+      main {
+        padding: 60px 0;
+      }
+
+      section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--primary);
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--secondary);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-title p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--text);
+      }
+
+      /* Daily Quote Section */
+      .daily-quote {
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--glass-border);
+        margin-bottom: 40px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .daily-quote:before {
+        content: "\201C";
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 5rem;
+        color: rgba(255, 255, 255, 0.2);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .daily-quote:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .daily-quote h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .daily-quote h3 i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      .quote-text {
+        font-size: 1.3rem;
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--dark);
+        line-height: 1.8;
+      }
+
+      .quote-reference {
+        font-weight: 600;
+        color: var(--secondary);
+        font-size: 1.1rem;
+      }
+
+      /* Scriptures Section */
+      .scriptures-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+      }
+
+      .scripture-card {
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .scripture-card:before {
+        content: "\f02d";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+      .scripture-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .scripture-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .scripture-card h3 i {
+        margin-right: 10px;
+        color: var(--secondary);
+        font-size: 1.1rem;
+      }
+
+      .scripture-card p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+      }
+
+      .scripture-content {
+        max-height: 150px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .scripture-card.expanded .scripture-content {
+        max-height: 1000px;
+      }
+
+      .scripture-reference {
+        font-weight: 600;
+        color: var(--secondary);
+        text-align: right;
+        font-size: 0.9rem;
+        margin-top: 15px;
+      }
+
+      .read-more-scripture {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: var(--primary);
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      /* Articles Section */
+      .articles-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+      }
+
+      .article-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .article-image {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .article-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .article-card:hover .article-image img {
+        transform: scale(1.1);
+      }
+
+      .article-content {
+        padding: 20px;
+      }
+
+      .article-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+      }
+
+      .article-meta i {
+        margin-right: 5px;
+        color: var(--secondary);
+        font-size: 0.8rem;
+      }
+
+      .article-excerpt {
+        margin-bottom: 15px;
+        line-height: 1.7;
+        max-height: 60px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .article-card.expanded .article-excerpt {
+        max-height: 500px;
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--secondary);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .read-more:hover {
+        color: var(--primary);
+      }
+
+      .expand-article {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: var(--primary);
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      /* About Section */
+      .about-container {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 280px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-image img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 5px solid var(--glass);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+      }
+
+      .about-content {
+        flex: 2;
+      }
+
+      .about-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .about-content h3 i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      .about-content p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--secondary);
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Events Section */
+      .events-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .event-card {
+        background: var(--glass);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .event-date {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      .event-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .event-card h3 i {
+        margin-right: 10px;
+        color: var(--secondary);
+        font-size: 1.1rem;
+      }
+
+      .event-content {
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .event-card.expanded .event-content {
+        max-height: 500px;
+      }
+
+      .event-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      .event-meta span {
+        display: flex;
+        align-items: center;
+      }
+
+      .event-meta i {
+        color: var(--secondary);
+        margin-right: 5px;
+        font-size: 0.9rem;
+      }
+
+      .expand-event {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: var(--primary);
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: url("assets/images/contact-bg.jpg") center/cover no-repeat;
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .contact-section:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(108, 74, 182, 0.8);
+        z-index: 0;
+      }
+
+      .contact-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-section .section-title h2,
+      .contact-section .section-title p {
+        color: white;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        background: var(--glass-dark);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-icon {
+        font-size: 1.2rem;
+        color: var(--accent);
+        background: rgba(255, 255, 255, 0.2);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .contact-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: white;
+      }
+
+      .contact-text p {
+        color: #ddd;
+        font-size: 0.95rem;
+      }
+
+      .contact-form {
+        background: var(--glass-dark);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+
+      .form-control::placeholder {
+        color: #ccc;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: var(--accent);
+        color: var(--dark);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        background: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-col h4 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: var(--accent);
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h4:after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: var(--secondary);
+        bottom: 0;
+        left: 0;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-links a i {
+        margin-right: 8px;
+        font-size: 0.8rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+        transform: translateX(5px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.85rem;
+        color: #aaa;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--secondary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 99;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+      .delay-4 {
+        animation-delay: 0.8s;
+      }
+      .delay-5 {
+        animation-delay: 1s;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        header {
+          height: 60vh;
+          min-height: 400px;
+        }
+
+        .header-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .about-container {
+          flex-direction: column;
+        }
+
+        .about-image {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background: var(--glass-dark);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          transition: all 0.5s ease;
+          padding: 30px 0;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .nav-links li {
+          margin: 15px 0;
+        }
+
+        .nav-links a {
+          font-size: 1.3rem;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .header-content h1 {
+          font-size: 2rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .daily-quote {
+          padding: 25px 20px;
+        }
+
+        .quote-text {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        header {
+          height: 50vh;
+          min-height: 350px;
+        }
+
+        .header-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .header-content p {
+          font-size: 1rem;
+        }
+
+        .logo-container {
+          width: 80px;
+          height: 80px;
+        }
+
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="container nav-container">
+        <a href="#" class="nav-logo">Good Life Devotion</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+          </li>
+          <li>
+            <a href="#scriptures"><i class="fas fa-bible"></i> Scriptures</a>
+          </li>
+          <li>
+            <a href="#articles"><i class="fas fa-newspaper"></i> Articles</a>
+          </li>
+          <li>
+            <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header with Image Background and Video Overlay -->
+    <header id="home">
+      <div class="header-bg"></div>
+      <video autoplay muted loop class="header-video" id="headerVideo">
+        <!-- Replace with your video path -->
+        <source src="images/dark background.jpg" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="header-overlay"></div>
+      <div class="header-content">
+        <div class="logo-container">
+          <!-- Replace with your church logo path -->
+          <img
+            src="images/dark background.jpg"
+            alt="Grace Covenant Logo"
+            class="logo"
+          />
+        </div>
+        <h1 class="fade-in">Good Life Devotion</h1>
+        <p class="fade-in delay-1">
+          Spreading the Gospel of Jesus Christ to All Nations
+        </p>
+        <a href="#about" class="btn fade-in delay-2">Learn More</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Daily Quote Section -->
+      <section class="daily-quote-section">
+        <div class="container">
+          <div class="daily-quote fade-in pulse">
+            <h3><i class="fas fa-quote-left"></i> Today's Inspiration</h3>
+            <p class="quote-text">
+              "For God so loved the world that he gave his one and only Son,
+              that whoever believes in him shall not perish but have eternal
+              life."
+            </p>
+            <p class="quote-reference">John 3:16 (NIV)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>About Our Ministry</h2>
+            <p>Discover the heart and vision behind Good Life Devotion</p>
+          </div>
+          <div class="about-container fade-in delay-1">
+            <div class="about-image">
+              <!-- Replace with pastor's image path -->
+              <img src="images/Pastor 3.png" alt="Pastor Marvin Essiaw" />
+            </div>
+            <div class="about-content">
+              <h3><i class="fas fa-user-tie"></i> Pastor Marvin Essiaw</h3>
+              <p>
+                Welcome to Good Life Devotion, a place where God's love
+                transforms lives. Founded in 2010, our ministry has been
+                dedicated to spreading the Gospel and making disciples of all
+                nations.
+              </p>
+              <p>
+                With a passion for God's Word and a heart for people, Pastor
+                Marvin has been leading this ministry with wisdom and grace. His
+                teachings focus on the power of faith, the importance of prayer,
+                and living a life surrendered to Christ.
+              </p>
+              <p>
+                Join us as we journey together in faith, growing in the
+                knowledge of God and experiencing His love and power in our
+                daily lives.
+              </p>
+              <div class="social-links">
+                <a
+                  href="https://www.facebook.com/marvin.essiaw.5/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://twitter.com/GODLIFEDEVOTION"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/yourchurchprofile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/yourchurchchannel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <!-- Additional platform example -->
+                <a
+                  href="https://wa.me/1234567890"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scriptures Section -->
+      <section id="scriptures" class="scriptures-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Daily Scriptures</h2>
+            <p>Nourish your soul with God's Word</p>
+          </div>
+          <div class="scriptures-container">
+            <div class="scripture-card fade-in delay-1">
+              <h3><i class="fas fa-cross"></i> Strength in Christ</h3>
+              <div class="scripture-content">
+                <p>
+                  "I can do all things through Christ who strengthens me. This
+                  verse reminds us that no matter what challenges we face, we
+                  have divine strength available to us. When we feel weak,
+                  Christ becomes our strength. When we feel inadequate, His
+                  power is made perfect in our weakness.
+                </p>
+                <p>
+                  This promise isn't about accomplishing our own will, but about
+                  fulfilling God's purposes in our lives. As we abide in Him, we
+                  can accomplish all that He calls us to do."
+                </p>
+              </div>
+              <p class="scripture-reference">Philippians 4:13</p>
+              <span class="read-more-scripture"
+                >Read More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+            <div class="scripture-card fade-in delay-2">
+              <h3><i class="fas fa-pray"></i> God's Peace</h3>
+              <div class="scripture-content">
+                <p>
+                  "Do not be anxious about anything, but in every situation, by
+                  prayer and petition, with thanksgiving, present your requests
+                  to God. And the peace of God, which transcends all
+                  understanding, will guard your hearts and your minds in Christ
+                  Jesus."
+                </p>
+                <p>
+                  This powerful passage teaches us the antidote to anxiety.
+                  Instead of worrying, we're called to pray with thanksgiving.
+                  The result is God's supernatural peace that guards our hearts
+                  and minds. This peace isn't dependent on circumstances but on
+                  our relationship with Christ.
+                </p>
+                <p>
+                  When we truly surrender our concerns to God, He replaces our
+                  anxiety with His perfect peace that surpasses human
+                  comprehension."
+                </p>
+              </div>
+              <p class="scripture-reference">Philippians 4:6-7</p>
+              <span class="read-more-scripture"
+                >Read More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+            <div class="scripture-card fade-in delay-3">
+              <h3><i class="fas fa-hands-helping"></i> Faith and Works</h3>
+              <div class="scripture-content">
+                <p>
+                  "In the same way, faith by itself, if it is not accompanied by
+                  action, is dead. This verse challenges us to examine whether
+                  our faith is alive and active. Genuine faith naturally
+                  produces good works as evidence of its existence.
+                </p>
+                <p>
+                  James isn't teaching salvation by works, but rather that true
+                  saving faith will always manifest in a transformed life. Our
+                  works don't earn salvation, but they demonstrate that we've
+                  truly received salvation.
+                </p>
+                <p>
+                  This passage calls us to a faith that moves beyond mere
+                  intellectual assent to active obedience and love in action."
+                </p>
+              </div>
+              <p class="scripture-reference">James 2:17</p>
+              <span class="read-more-scripture"
+                >Read More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles Section -->
+      <section id="articles" class="articles-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Recent Articles</h2>
+            <p>Insights and teachings to grow your faith</p>
+          </div>
+          <div class="articles-container">
+            <div class="article-card fade-in delay-1">
+              <div class="article-image">
+                <!-- Replace with article image path -->
+                <img src="images/Prayer Life .png" alt="Prayer Life" />
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+                  <span><i class="far fa-user"></i> Pastor Marvin</span>
+                </div>
+                <h3>Developing a Powerful Prayer Life</h3>
+                <div class="article-excerpt">
+                  <p>
+                    Prayer is the lifeline of every believer, yet many
+                    Christians struggle to maintain a consistent and meaningful
+                    prayer life. In this article, we'll explore practical ways
+                    to deepen your connection with God through intentional
+                    prayer.
+                  </p>
+                  <p>
+                    First, understand that prayer is not just about presenting
+                    requests to God, but about cultivating a relationship. Jesus
+                    modeled this in His earthly ministry, often withdrawing to
+                    lonely places to pray (Luke 5:16).
+                  </p>
+                  <p>
+                    Establish a regular prayer routine. While we should pray
+                    throughout the day (1 Thessalonians 5:17), having set times
+                    for focused prayer helps develop discipline. Many find the
+                    early morning most effective, before the day's distractions
+                    begin.
+                  </p>
+                  <p>
+                    Use Scripture in your prayers. The Psalms are particularly
+                    helpful for this. Praying God's Word back to Him aligns our
+                    hearts with His will and teaches us how to pray effectively.
+                  </p>
+                </div>
+                <a href="#" class="read-more"
+                  >Read Full Article <i class="fas fa-arrow-right"></i
+                ></a>
+                <span class="expand-article"
+                  >Show More <i class="fas fa-chevron-down"></i
+                ></span>
+              </div>
+            </div>
+            <div class="article-card fade-in delay-2">
+              <div class="article-image">
+                <!-- Replace with article image path -->
+                <img src="images/the cross 2.png" alt="Faith Journey" />
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="far fa-calendar-alt"></i> June 8, 2023</span>
+                  <span><i class="far fa-user"></i> Pastor Marvin</span>
+                </div>
+                <h3>Walking by Faith in Difficult Times</h3>
+                <div class="article-excerpt">
+                  <p>
+                    Life's challenges can sometimes shake our faith to its core.
+                    Whether it's health issues, financial struggles, or
+                    relationship problems, difficult seasons test what we really
+                    believe about God.
+                  </p>
+                  <p>
+                    Hebrews 11:1 defines faith as "confidence in what we hope
+                    for and assurance about what we do not see." This means
+                    faith often operates in the realm of the unseen and the
+                    not-yet.
+                  </p>
+                  <p>
+                    During trials, remember God's faithfulness in the past. The
+                    Israelites built memorials to remember God's miracles
+                    (Joshua 4), and we should regularly recall how God has
+                    worked in our lives.
+                  </p>
+                  <p>
+                    Focus on God's character rather than your circumstances. Our
+                    feelings fluctuate, but God remains the same yesterday,
+                    today, and forever (Hebrews 13:8). His love, power, and
+                    wisdom are constant.
+                  </p>
+                </div>
+                <a href="#" class="read-more"
+                  >Read Full Article <i class="fas fa-arrow-right"></i
+                ></a>
+                <span class="expand-article"
+                  >Show More <i class="fas fa-chevron-down"></i
+                ></span>
+              </div>
+            </div>
+            <div class="article-card fade-in delay-3">
+              <div class="article-image">
+                <!-- Replace with article image path -->
+                <img src="images/holly  spirite .png" alt="Holy Spirit" />
+              </div>
+              <div class="article-content">
+                <div class="article-meta">
+                  <span><i class="far fa-calendar-alt"></i> June 1, 2023</span>
+                  <span><i class="far fa-user"></i> Pastor Marvin</span>
+                </div>
+                <h3>The Role of the Holy Spirit in Your Life</h3>
+                <div class="article-excerpt">
+                  <p>
+                    The Holy Spirit is perhaps the most misunderstood person of
+                    the Trinity. Yet Jesus said it was better for Him to go away
+                    so the Spirit could come (John 16:7). What does this mean
+                    for us today?
+                  </p>
+                  <p>
+                    The Holy Spirit is our Helper (John 14:16), our Teacher
+                    (John 14:26), and the one who convicts the world of sin
+                    (John 16:8). He doesn't draw attention to Himself but always
+                    points to Jesus.
+                  </p>
+                  <p>
+                    One of the Spirit's primary roles is to produce spiritual
+                    fruit in our lives (Galatians 5:22-23). These
+                    qualities—love, joy, peace, etc.—are evidence of His work
+                    within us.
+                  </p>
+                  <p>
+                    The Spirit also gives spiritual gifts for the edification of
+                    the church (1 Corinthians 12). These are not for personal
+                    benefit but for serving others and glorifying God.
+                  </p>
+                </div>
+                <a href="#" class="read-more"
+                  >Read Full Article <i class="fas fa-arrow-right"></i
+                ></a>
+                <span class="expand-article"
+                  >Show More <i class="fas fa-chevron-down"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Section -->
+      <section id="events" class="events-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Upcoming Events</h2>
+            <p>Join us for worship, fellowship, and growth</p>
+          </div>
+          <div class="events-container">
+            <div class="event-card fade-in delay-1">
+              <span class="event-date">July 15, 2023</span>
+              <h3><i class="fas fa-church"></i> Sunday Worship Service</h3>
+              <div class="event-content">
+                <div class="event-meta">
+                  <span><i class="far fa-clock"></i> 9:00 AM - 12:00 PM</span>
+                  <span
+                    ><i class="fas fa-map-marker-alt"></i> Main Sanctuary</span
+                  >
+                </div>
+                <p>
+                  Join us for a powerful time of worship and the Word as we
+                  gather together to glorify God. This Sunday, Pastor John will
+                  be continuing our series "Walking in Victory" with a message
+                  from Ephesians 6 about the armor of God.
+                </p>
+                <p>
+                  We'll have special worship led by our praise team, including
+                  some new songs we're excited to share. The service will
+                  conclude with prayer ministry and an opportunity to respond to
+                  God's Word.
+                </p>
+                <p>
+                  Children's ministry is available for ages 0-12, with
+                  age-appropriate teaching and activities. Youth will remain in
+                  the main service this week.
+                </p>
+              </div>
+              <a href="#" class="read-more"
+                >More Details <i class="fas fa-arrow-right"></i
+              ></a>
+              <span class="expand-event"
+                >Show More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+            <div class="event-card fade-in delay-2">
+              <span class="event-date">July 18, 2023</span>
+              <h3><i class="fas fa-bible"></i> Bible Study Night</h3>
+              <div class="event-content">
+                <div class="event-meta">
+                  <span><i class="far fa-clock"></i> 6:30 PM - 8:00 PM</span>
+                  <span
+                    ><i class="fas fa-map-marker-alt"></i> Fellowship Hall</span
+                  >
+                </div>
+                <p>
+                  Deep dive into Scripture with Pastor John as we explore the
+                  Book of Romans chapter by chapter. This week we'll be
+                  examining Romans 8, one of the most powerful chapters in the
+                  Bible about life in the Spirit.
+                </p>
+                <p>
+                  Come prepared to discuss, ask questions, and grow in your
+                  understanding of God's Word. This is a more interactive
+                  setting than Sunday services, with opportunities for group
+                  discussion.
+                </p>
+                <p>
+                  Light refreshments will be served. No childcare provided for
+                  this event.
+                </p>
+              </div>
+              <a href="#" class="read-more"
+                >More Details <i class="fas fa-arrow-right"></i
+              ></a>
+              <span class="expand-event"
+                >Show More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+            <div class="event-card fade-in delay-3">
+              <span class="event-date">July 22, 2023</span>
+              <h3><i class="fas fa-users"></i> Youth Outreach</h3>
+              <div class="event-content">
+                <div class="event-meta">
+                  <span><i class="far fa-clock"></i> 10:00 AM - 2:00 PM</span>
+                  <span><i class="fas fa-map-marker-alt"></i> City Park</span>
+                </div>
+                <p>
+                  A special event for youth with games, music, and a message of
+                  hope in Christ. Our youth ministry team has prepared an
+                  exciting program designed to engage teenagers with the Gospel
+                  in relevant ways.
+                </p>
+                <p>
+                  Activities include: Basketball tournament, worship concert by
+                  local Christian bands, free lunch, and a short gospel
+                  presentation. Friends are welcome!
+                </p>
+                <p>
+                  Volunteers needed - contact our youth pastor if you can help
+                  with setup, food service, or cleanup.
+                </p>
+              </div>
+              <a href="#" class="read-more"
+                >More Details <i class="fas fa-arrow-right"></i
+              ></a>
+              <span class="expand-event"
+                >Show More <i class="fas fa-chevron-down"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <!-- Replace your entire contact form section with this code -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you</p>
+          </div>
+          <div class="contact-container">
+            <div class="contact-info fade-in delay-1">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Our Location</h4>
+                  <p>123 Faith Avenue, Grace City, GC 12345</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Phone Number</h4>
+                  <p>(+233) 558 392 045</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email Address</h4>
+                  <p>info@gracecovenant.org</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Service Times</h4>
+                  <p>
+                    Sunday: 9:00 AM & 11:00 AM<br />
+                    Wednesday: 7:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-form fade-in delay-2">
+              <form
+                action="https://formsubmit.co/hoakpedw@gmail.com"
+                method="POST"
+              >
+                <!-- FormSubmit Required Fields -->
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://yourwebsite.com/thank-you.html"
+                />
+                <input type="hidden" name="_template" value="box" />
+
+                <!-- Your Form Fields -->
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-control"
+                    placeholder="Enter subject"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-control"
+                    placeholder="Enter your message"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h4>Grace Covenant</h4>
+            <p>
+              A ministry dedicated to spreading the Gospel of Jesus Christ and
+              making disciples of all nations.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#about"
+                  ><i class="fas fa-chevron-right"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="#scriptures"
+                  ><i class="fas fa-chevron-right"></i> Daily Scriptures</a
+                >
+              </li>
+              <li>
+                <a href="#articles"
+                  ><i class="fas fa-chevron-right"></i> Articles</a
+                >
+              </li>
+              <li>
+                <a href="#events"
+                  ><i class="fas fa-chevron-right"></i> Events</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Sermons</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Bible Studies</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Prayer Requests</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Ministries</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Give Online</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/yourchurchpage"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://twitter.com/yourchurchhandle"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/yourchurchprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/yourchurchchannel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 Good Life Devotion. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById("navbar");
+      const navLogo = document.querySelector(".nav-logo");
+      const navLinksAll = document.querySelectorAll(".nav-links a");
+      const mobileMenuIcon = document.querySelector(".mobile-menu-btn i");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+          navLogo.classList.add("scrolled");
+          navLinksAll.forEach((link) => link.classList.add("scrolled"));
+          mobileMenuBtn.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+          navLogo.classList.remove("scrolled");
+          navLinksAll.forEach((link) => link.classList.remove("scrolled"));
+          mobileMenuBtn.classList.remove("scrolled");
+        }
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("active");
+        } else {
+          backToTop.classList.remove("active");
+        }
+      });
+
+      // Smooth Scrolling for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (navLinks.classList.contains("active")) {
+              navLinks.classList.remove("active");
+            }
+          }
+        });
+      });
+
+      // Animation on Scroll
+      const fadeElements = document.querySelectorAll(".fade-in");
+
+      const fadeInOnScroll = () => {
+        fadeElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementTop < windowHeight - 100) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      // Initial check
+      fadeInOnScroll();
+
+      // Check on scroll
+      window.addEventListener("scroll", fadeInOnScroll);
+
+      // Video Background Effect
+      const headerVideo = document.getElementById("headerVideo");
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const videoOpacity = Math.max(0, 1 - scrollPosition / 300);
+        headerVideo.style.opacity = videoOpacity;
+
+        if (scrollPosition < 100) {
+          headerVideo.classList.add("active");
+        } else {
+          headerVideo.classList.remove("active");
+        }
+      });
+
+      // Expandable Sections
+      const scriptureCards = document.querySelectorAll(".scripture-card");
+      scriptureCards.forEach((card) => {
+        const readMoreBtn = card.querySelector(".read-more-scripture");
+        readMoreBtn.addEventListener("click", () => {
+          card.classList.toggle("expanded");
+          readMoreBtn.innerHTML = card.classList.contains("expanded")
+            ? 'Show Less <i class="fas fa-chevron-up"></i>'
+            : 'Read More <i class="fas fa-chevron-down"></i>';
+        });
+      });
+
+      const articleCards = document.querySelectorAll(".article-card");
+      articleCards.forEach((card) => {
+        const expandBtn = card.querySelector(".expand-article");
+        expandBtn.addEventListener("click", () => {
+          card.classList.toggle("expanded");
+          expandBtn.innerHTML = card.classList.contains("expanded")
+            ? 'Show Less <i class="fas fa-chevron-up"></i>'
+            : 'Show More <i class="fas fa-chevron-down"></i>';
+        });
+      });
+
+      const eventCards = document.querySelectorAll(".event-card");
+      eventCards.forEach((card) => {
+        const expandBtn = card.querySelector(".expand-event");
+        expandBtn.addEventListener("click", () => {
+          card.classList.toggle("expanded");
+          expandBtn.innerHTML = card.classList.contains("expanded")
+            ? 'Show Less <i class="fas fa-chevron-up"></i>'
+            : 'Show More <i class="fas fa-chevron-down"></i>';
+        });
+      });
+
+      // Initialize header video
+      headerVideo.classList.add("active");
+    </script>
+  </body>
+</html>
